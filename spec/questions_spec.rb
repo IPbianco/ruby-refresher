@@ -9,8 +9,8 @@ end
 describe 'the Friday test :)' do
 
   it 'select_elements_starting_with_a' do
-    n = select_elements_starting_with_a ['bananas', 'apples', 'pears', 'avocados']
-    expect(n).to eq ['apples', 'avocados']
+    n = select_elements_starting_with_a ['bananas', 'apples', 'pears', 'avocados', 'Cherries', 'Apricot']
+    expect(n).to eq ['apples', 'avocados', 'Apricot']
   end
 
   it 'select_elements_starting_with_vowel' do
@@ -34,10 +34,8 @@ describe 'the Friday test :)' do
   end
 
   it 'every_possible_pairing_of_students' do
-    n = every_possible_pairing_of_students(['Bob', 'Dave', 'Clive']) || []
-    sorted = n.map { |pair| pair.sort }.sort_by { |pair| [pair.first, pair.last] }
-
-    expect(sorted).to eq [['Bob', 'Clive'], ['Bob', 'Dave'], ['Clive', 'Dave']]
+    n = every_possible_pairing_of_students(['Bob', 'Dave', 'Clive', 'Ignacio'])
+    expect(n).to eq [['Bob', 'Dave'], ['Bob', 'Clive'], ['Bob', 'Ignacio'], ['Dave', 'Clive'], ['Dave', 'Ignacio'], ['Clive', 'Ignacio']]
   end
 
   it 'all_elements_except_first_3' do
